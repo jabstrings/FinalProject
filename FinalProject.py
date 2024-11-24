@@ -21,3 +21,5 @@
 	#button to load audio file
 	#button to combine plots into single plot
 	#button for specgram graph
+
+				#structure subject to change depending on needs
