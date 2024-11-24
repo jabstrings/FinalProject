@@ -1,3 +1,5 @@
+import scipy.io as sc
+import matplotlib.pyplot as plt
 #Receiving sound data
 	#check for .wav
 		#if yes keep going
