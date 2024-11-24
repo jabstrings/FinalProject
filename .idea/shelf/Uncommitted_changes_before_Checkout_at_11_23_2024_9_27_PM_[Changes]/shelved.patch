@@ -1,0 +1,25 @@
+Index: FinalProject.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Receiving sound data\r\n\t#check for .wav\r\n\t\t#if yes keep going\r\n\t\t#if no convert to .wav\r\n\t#check for number of channels\r\n\t\t#if 1 channel keep going\r\n\t\t#if 2 channels, make two .wav files one for left channel one for right channel\r\n\t#check for metadata\r\n\t\t#if yes remove metadata\r\n\t\t#if no keep going\r\n\r\n\r\n#Plotting graphs and analysing data\r\n\t#display waveform graph/graphs\r\n\t#compute RT60 for low medium and high frequency\r\n\t#display RT60 graphs for low medium and high frequency\r\n\t#display difference in RT60 to reduce to 0.5 seconds\r\n\t#display specgram graph\r\n\r\n#Making Gui\r\n\t#button to load audio file\r\n\t#button to combine plots into single plot\r\n\t#button for specgram graph\r\n\r\n\t\t\t\t#structure subject to change depending on needs
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/FinalProject.py b/FinalProject.py
+--- a/FinalProject.py	(revision 5b2e70f2fb869d848213ba7083b8347933e73345)
++++ b/FinalProject.py	(date 1732415209540)
+@@ -1,3 +1,4 @@
++
+ #Receiving sound data
+ 	#check for .wav
+ 		#if yes keep going
+Index: test.txt
+===================================================================
+diff --git a/test.txt b/test.txt
+deleted file mode 100644
+--- a/test.txt	(revision 5b2e70f2fb869d848213ba7083b8347933e73345)
++++ /dev/null	(revision 5b2e70f2fb869d848213ba7083b8347933e73345)
+@@ -1,3 +0,0 @@
+-hello world!
+-
+-heladjfasldkjf
