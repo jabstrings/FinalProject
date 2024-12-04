@@ -64,6 +64,7 @@ my_frame.grid(row=0, column=0, sticky="ew", padx=5, pady=5)
 file_button = ttk.Button(my_frame, text="Open File", command=select_file)
 file_button.grid(row=0, column=0, padx=5, pady=5)
 
+
 # button for specgram graph
 analyze_button = ttk.Button(my_frame, text="Analyze")
 analyze_button.grid(row=0, column=1, padx=5, pady=5)
