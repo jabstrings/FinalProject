@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 import requests
 import tkinter as tk
 from tkinter import ttk, filedialog as fd, messagebox
+from tkinter.messagebox import showinfo
 
 from matplotlib.backend_bases import button_press_handler
 
@@ -34,6 +35,21 @@ from matplotlib.backend_bases import button_press_handler
 	#display specgram graph
 
 # Making Gui
+def select_file():
+    filetypes = (
+        ('audio files', '*.mp3'),
+        ('audio files', '*.wav')
+    )
+
+    filename = fd.askopenfilename(
+        title='Open File',
+        initialdir='/',
+        filetypes=filetypes)
+
+    showinfo(
+        title='Selected File',
+        message=filename
+    )
 
 root = tk.Tk()
 root.title("SPIDAM Sound Analysis")
@@ -43,10 +59,9 @@ root.geometry("1500x600")
 my_frame = ttk.LabelFrame(root, text="File Options", padding="5 5 5 5")
 my_frame.grid(row=0, column=0, sticky="ew", padx=5, pady=5)
 
-#
 
 # button to load audio file
-file_button = ttk.Button(my_frame, text="Open File")
+file_button = ttk.Button(my_frame, text="Open File", command=select_file)
 file_button.grid(row=0, column=0, padx=5, pady=5)
 
 # button for specgram graph
