@@ -6,6 +6,16 @@ import numpy as np
 import tkinter as tk
 import matplotlib.figure as figure
 from scipy.signal import butter, filtfilt
+import argparse
+import base64
+import json
+from pathlib import Path
+from bs4 import BeautifulSoup
+import requests
+from tkinter import ttk, filedialog as fd, messagebox
+from tkinter.messagebox import showinfo
+
+from matplotlib.backend_bases import button_press_handler
 #Receiving sound data
 	#check for .wav
 		#if yes keep going
