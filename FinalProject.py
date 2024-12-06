@@ -1,7 +1,7 @@
 # ????
-from scipy.io import wavfile
 import scipy.io
 import scipy.io as sc
+from scipy.io import wavfile
 import matplotlib.pyplot as plt
 
 # GUI Imports
@@ -34,9 +34,14 @@ def processSoundData(filename):
         #if not wav convert to wav
         i = 1
         #convert to wav, delete that i = 1 part later, it's just to get it to stop yelling at me
-    else
-        #keep going
-        #check for channel number
+    #else, keep going
+    #check for channel number
+    samplerate, data = wavfile.read(filename)
+    channelNumber = {data.shape[len(data.shape) - 1]}
+    if channelNumber == 2:
+        #split into two files
+    #channels split, here we go
+
 
 
 
