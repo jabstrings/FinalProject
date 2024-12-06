@@ -3,6 +3,7 @@ import scipy.io
 import scipy.io as sc
 from scipy.io import wavfile
 import matplotlib.pyplot as plt
+import subprocess
 
 # GUI Imports
 import argparse
@@ -29,11 +30,19 @@ from matplotlib.backend_bases import button_press_handler
 		#if no keep going
 
 def processSoundData(filename):
+    #in theory this works
     extension = filename.split('.')
-    if extension != 'wav':
+    if extension[1] != 'wav':
         #if not wav convert to wav
-        i = 1
-        #convert to wav, delete that i = 1 part later, it's just to get it to stop yelling at me
+        #assuming the only other thing you're uploading is an mp3
+        #creates new filename
+        newfilename = extension[0] + '.wav'
+        #converts to wav (in theory)
+        subprocess.call(['ffmpeg', '-i', filename, newfilename])
+        #assigns the name of the new file of to the filename object to make it easier
+        filename = newfilename
+
+        #convert to wav
     #else, keep going
     #check for channel number
     samplerate, data = wavfile.read(filename)
@@ -41,6 +50,8 @@ def processSoundData(filename):
     if channelNumber == 2:
         #split into two files
     #channels split, here we go
+
+
 
 
 
