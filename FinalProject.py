@@ -22,6 +22,17 @@ from matplotlib.figure import Figure
 
 from matplotlib.backend_bases import button_press_handler
 #Receiving sound data
+def processSoundData(filename):
+    extension = filename.split('.')
+    if extension != 'wav':
+        #if not wav convert to wav
+        i = 1
+        #convert to wav, delete that i = 1 part later, it's just to get it to stop yelling at me
+    #else, keep going
+    #check for channel number
+    samplerate, data = wavfile.read(filename)
+    channelNumber = {data.shape[len(data.shape) - 1]}
+    if channelNumber == 2:
 	#check for .wav
 		#if yes keep going
 		#if no convert to .wav
@@ -71,7 +82,7 @@ def find_nearest_value(array, value):
     return array[idx]
 
 #low rt60 function
-def lowRT60(data, sample_rate):
+def lowRT60(data, sample_rate, ax):
 	# Define the time vector
 	t = np.linspace(0, len(data) / sample_rate, len(data), endpoint=False)
 
@@ -94,9 +105,13 @@ def lowRT60(data, sample_rate):
 	# Convert the filtered audio signal to decibel scale
 	data_in_db = 10 * np.log10(np.abs(filtered_data) + 1e-10)  # Avoid log of zero
 
+	# Plot the filtered signal in decibel scale
+	ax.plot(t, data_in_db, linewidth=1, alpha=0.7, color='#004bc6')
+
 	# Find the index of the maximum value
 	index_of_max = np.argmax(data_in_db)
 	value_of_max = data_in_db[index_of_max]
+	ax.plot(t[index_of_max], data_in_db[index_of_max], 'go')
 
 	# Slice the array from the maximum value
 	sliced_array = data_in_db[index_of_max:]
@@ -105,32 +120,37 @@ def lowRT60(data, sample_rate):
 	# Find the nearest value for max-5dB and its index
 	value_of_max_less_5 = find_nearest_value(sliced_array, value_of_max_less_5)
 	index_of_max_less_5 = np.where(data_in_db == value_of_max_less_5)[0][0]
+	ax.plot(t[index_of_max_less_5], data_in_db[index_of_max_less_5], 'yo')
 
 	# Find the nearest value for max-25dB and its index
 	value_of_max_less_25 = value_of_max - 25
 	value_of_max_less_25 = find_nearest_value(sliced_array, value_of_max_less_25)
 	index_of_max_less_25 = np.where(data_in_db == value_of_max_less_25)[0][0]
+	ax.plot(t[index_of_max_less_25], data_in_db[index_of_max_less_25], 'ro')
 
 	# Calculate mid RT60 time
 	rt20 = t[index_of_max_less_5] - t[index_of_max_less_25]
 	lowrt60 = 3 * rt20
 
+	# Print RT60 value
+	print(f'The RT60 reverb time at freq {int(target_frequency)}Hz is {round(abs(lowrt60), 2)} seconds')
+
 #mid rt60 function
-def midRT60(data, sample_rate):
+def midRT60(data, sample_rate, ax):
 	# Define the time vector
 	t = np.linspace(0, len(data) / sample_rate, len(data), endpoint=False)
 
 	# Calculate the Fourier Transform of the signal
 	fft_result = np.fft.fft(data)
 	spectrum = np.abs(fft_result)  # Get magnitude spectrum
-	freqs = np.fft.fftfreq(len(data), d=1/sample_rate)
+	freqs = np.fft.fftfreq(len(data), d=1 / sample_rate)
 
 	# Use only positive frequencies
-	freqs = freqs[:len(freqs)//2]
-	spectrum = spectrum[:len(spectrum)//2]
+	freqs = freqs[:len(freqs) // 2]
+	spectrum = spectrum[:len(spectrum) // 2]
 
 	# Find the target frequency
-	target = 1000
+	target = 250
 	target_frequency = find_target_frequency(freqs, target)
 
 	# Apply a band-pass filter around the target frequency
@@ -139,9 +159,13 @@ def midRT60(data, sample_rate):
 	# Convert the filtered audio signal to decibel scale
 	data_in_db = 10 * np.log10(np.abs(filtered_data) + 1e-10)  # Avoid log of zero
 
+	# Plot the filtered signal in decibel scale
+	ax.plot(t, data_in_db, linewidth=1, alpha=0.7, color='#ffa500')
+
 	# Find the index of the maximum value
 	index_of_max = np.argmax(data_in_db)
 	value_of_max = data_in_db[index_of_max]
+	ax.plot(t[index_of_max], data_in_db[index_of_max], 'go')
 
 	# Slice the array from the maximum value
 	sliced_array = data_in_db[index_of_max:]
@@ -150,32 +174,37 @@ def midRT60(data, sample_rate):
 	# Find the nearest value for max-5dB and its index
 	value_of_max_less_5 = find_nearest_value(sliced_array, value_of_max_less_5)
 	index_of_max_less_5 = np.where(data_in_db == value_of_max_less_5)[0][0]
+	ax.plot(t[index_of_max_less_5], data_in_db[index_of_max_less_5], 'yo')
 
 	# Find the nearest value for max-25dB and its index
 	value_of_max_less_25 = value_of_max - 25
 	value_of_max_less_25 = find_nearest_value(sliced_array, value_of_max_less_25)
 	index_of_max_less_25 = np.where(data_in_db == value_of_max_less_25)[0][0]
+	ax.plot(t[index_of_max_less_25], data_in_db[index_of_max_less_25], 'ro')
 
 	# Calculate mid RT60 time
 	rt20 = t[index_of_max_less_5] - t[index_of_max_less_25]
 	midrt60 = 3 * rt20
 
+	# Print RT60 value
+	print(f'The RT60 reverb time at freq {int(target_frequency)}Hz is {round(abs(midrt60), 2)} seconds')
+
 #mid rt60 function
-def highRT60(data, sample_rate):
+def highRT60(data, sample_rate, ax):
 	# Define the time vector
 	t = np.linspace(0, len(data) / sample_rate, len(data), endpoint=False)
 
 	# Calculate the Fourier Transform of the signal
 	fft_result = np.fft.fft(data)
 	spectrum = np.abs(fft_result)  # Get magnitude spectrum
-	freqs = np.fft.fftfreq(len(data), d=1/sample_rate)
+	freqs = np.fft.fftfreq(len(data), d=1 / sample_rate)
 
 	# Use only positive frequencies
-	freqs = freqs[:len(freqs)//2]
-	spectrum = spectrum[:len(spectrum)//2]
+	freqs = freqs[:len(freqs) // 2]
+	spectrum = spectrum[:len(spectrum) // 2]
 
 	# Find the target frequency
-	target = 1000
+	target = 250
 	target_frequency = find_target_frequency(freqs, target)
 
 	# Apply a band-pass filter around the target frequency
@@ -184,9 +213,13 @@ def highRT60(data, sample_rate):
 	# Convert the filtered audio signal to decibel scale
 	data_in_db = 10 * np.log10(np.abs(filtered_data) + 1e-10)  # Avoid log of zero
 
+	# Plot the filtered signal in decibel scale
+	ax.plot(t, data_in_db, linewidth=1, alpha=0.7, color='#009900')
+
 	# Find the index of the maximum value
 	index_of_max = np.argmax(data_in_db)
 	value_of_max = data_in_db[index_of_max]
+	ax.plot(t[index_of_max], data_in_db[index_of_max], 'go')
 
 	# Slice the array from the maximum value
 	sliced_array = data_in_db[index_of_max:]
@@ -195,19 +228,35 @@ def highRT60(data, sample_rate):
 	# Find the nearest value for max-5dB and its index
 	value_of_max_less_5 = find_nearest_value(sliced_array, value_of_max_less_5)
 	index_of_max_less_5 = np.where(data_in_db == value_of_max_less_5)[0][0]
+	ax.plot(t[index_of_max_less_5], data_in_db[index_of_max_less_5], 'yo')
 
 	# Find the nearest value for max-25dB and its index
 	value_of_max_less_25 = value_of_max - 25
 	value_of_max_less_25 = find_nearest_value(sliced_array, value_of_max_less_25)
 	index_of_max_less_25 = np.where(data_in_db == value_of_max_less_25)[0][0]
+	ax.plot(t[index_of_max_less_25], data_in_db[index_of_max_less_25], 'ro')
 
 	# Calculate mid RT60 time
 	rt20 = t[index_of_max_less_5] - t[index_of_max_less_25]
 	highrt60 = 3 * rt20
 
-#display RT60 graphs for low medium and high frequency
-#display difference in RT60 to reduce to 0.5 seconds
-#display specgram graph
+	# Print RT60 value
+	print(f'The RT60 reverb time at freq {int(target_frequency)}Hz is {round(abs(highrt60), 2)} seconds')
+
+def combinedRT60(data, sample_rate, ax):
+	lowRT60(data, sample_rate, ax)
+	midRT60(data, sample_rate, ax)
+	highRT60(data, sample_rate, ax)
+
+#specgram graph
+def specgram(data, sample_rate):
+	spectrum, freqs, t, im = plt.specgram(data, Fs=sample_rate, NFFT=1024, cmap=plt.get_cmap('autumn_r'))
+	cbar = plt.colorbar(im)
+	plt.xlabel('Time (s)')
+	plt.ylabel('Frequency (Hz)')
+	cbar.set_label('Intensity (dB)')
+
+sample_rate, data = wavfile.read('ClapIST.wav')
 
 #Making Gui
 def select_file():
@@ -237,14 +286,15 @@ my_frame.grid(row=0, column=0, sticky="ew", padx=5, pady=5)
 
 #plot canvas
 canvas = FigureCanvasTkAgg(fig, master=my_frame)
+canvas.draw()
+canvas.get_tk_widget().grid(row=1, column=0, padx=1, pady=1)
 
 # button to load audio file
 file_button = ttk.Button(my_frame, text="Open File", command=select_file)
 file_button.grid(row=0, column=0, padx=5, pady=5)
 
-# button for specgram graph
-analyze_button = ttk.Button(my_frame, text="Analyze")
+# button for graphs
+analyze_button = ttk.Button(my_frame, text="Analyze", command=highRT60(data, sample_rate, ax))
 analyze_button.grid(row=0, column=1, padx=5, pady=5)
-# button
 
 root.mainloop()

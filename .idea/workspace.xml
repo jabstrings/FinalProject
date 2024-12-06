@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1047d6-544a-4911-b645-5690cdba6bbf" name="Changes" comment="RT60 progress" />
+    <list default="true" id="6e1047d6-544a-4911-b645-5690cdba6bbf" name="Changes" comment="All RT60 calculations">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinalProject.py" beforeDir="false" afterPath="$PROJECT_DIR$/FinalProject.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,6 +89,7 @@
       <workItem from="1732418114735" duration="139000" />
       <workItem from="1732418260572" duration="99000" />
       <workItem from="1733344430914" duration="690000" />
+      <workItem from="1733515759946" duration="3180000" />
     </task>
     <task id="LOCAL-00001" summary="Framework of code I suppose">
       <option name="closed" value="true" />
@@ -151,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733466431324</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="All RT60 calculations">
+      <option name="closed" value="true" />
+      <created>1733515910875</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1733515910875</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,13 +199,14 @@
     <MESSAGE value="Waveform Plot functions" />
     <MESSAGE value="Add GUI buttons" />
     <MESSAGE value="RT60 progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="RT60 progress" />
+    <MESSAGE value="All RT60 calculations" />
+    <option name="LAST_COMMIT_MESSAGE" value="All RT60 calculations" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FinalProject_py$scrape.coverage" NAME="scrape Coverage Results" MODIFIED="1733170186601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../L15_hw/ch12_server" />
     <SUITE FILE_PATH="coverage/FinalProject_py$tkinter_full.coverage" NAME="tkinter full Coverage Results" MODIFIED="1733172258135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Year 2 Sophomore - Fall 2024-25/Comp Prob Solv in Python/L15 b" />
     <SUITE FILE_PATH="coverage/Final_Project$L23HW.coverage" NAME="L23HW Coverage Results" MODIFIED="1732417302485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FinalProject_py$FinalProject.coverage" NAME="FinalProject Coverage Results" MODIFIED="1733345223399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Final_Project$FinalProject.coverage" NAME="FinalProject Coverage Results" MODIFIED="1733368488370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Final_Project$FinalProject.coverage" NAME="FinalProject Coverage Results" MODIFIED="1733518651908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
