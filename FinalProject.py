@@ -160,6 +160,51 @@ def midRT60(data, sample_rate):
 	rt20 = t[index_of_max_less_5] - t[index_of_max_less_25]
 	midrt60 = 3 * rt20
 
+#mid rt60 function
+def highRT60(data, sample_rate):
+	# Define the time vector
+	t = np.linspace(0, len(data) / sample_rate, len(data), endpoint=False)
+
+	# Calculate the Fourier Transform of the signal
+	fft_result = np.fft.fft(data)
+	spectrum = np.abs(fft_result)  # Get magnitude spectrum
+	freqs = np.fft.fftfreq(len(data), d=1/sample_rate)
+
+	# Use only positive frequencies
+	freqs = freqs[:len(freqs)//2]
+	spectrum = spectrum[:len(spectrum)//2]
+
+	# Find the target frequency
+	target = 1000
+	target_frequency = find_target_frequency(freqs, target)
+
+	# Apply a band-pass filter around the target frequency
+	filtered_data = bandpass_filter(data, target_frequency - 50, target_frequency + 50, sample_rate)
+
+	# Convert the filtered audio signal to decibel scale
+	data_in_db = 10 * np.log10(np.abs(filtered_data) + 1e-10)  # Avoid log of zero
+
+	# Find the index of the maximum value
+	index_of_max = np.argmax(data_in_db)
+	value_of_max = data_in_db[index_of_max]
+
+	# Slice the array from the maximum value
+	sliced_array = data_in_db[index_of_max:]
+	value_of_max_less_5 = value_of_max - 5
+
+	# Find the nearest value for max-5dB and its index
+	value_of_max_less_5 = find_nearest_value(sliced_array, value_of_max_less_5)
+	index_of_max_less_5 = np.where(data_in_db == value_of_max_less_5)[0][0]
+
+	# Find the nearest value for max-25dB and its index
+	value_of_max_less_25 = value_of_max - 25
+	value_of_max_less_25 = find_nearest_value(sliced_array, value_of_max_less_25)
+	index_of_max_less_25 = np.where(data_in_db == value_of_max_less_25)[0][0]
+
+	# Calculate mid RT60 time
+	rt20 = t[index_of_max_less_5] - t[index_of_max_less_25]
+	highrt60 = 3 * rt20
+
 #display RT60 graphs for low medium and high frequency
 #display difference in RT60 to reduce to 0.5 seconds
 #display specgram graph
