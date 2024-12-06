@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1047d6-544a-4911-b645-5690cdba6bbf" name="Changes" comment="Waveform Plot functions">
+    <list default="true" id="6e1047d6-544a-4911-b645-5690cdba6bbf" name="Changes" comment="Add GUI buttons">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FinalProject.py" beforeDir="false" afterPath="$PROJECT_DIR$/FinalProject.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733172265479</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add GUI buttons">
+      <option name="closed" value="true" />
+      <created>1733346458548</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733346458548</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,13 +180,14 @@
     <MESSAGE value="New Commit" />
     <MESSAGE value="L23 program" />
     <MESSAGE value="Waveform Plot functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Waveform Plot functions" />
+    <MESSAGE value="Add GUI buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add GUI buttons" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FinalProject_py$scrape.coverage" NAME="scrape Coverage Results" MODIFIED="1733170186601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../L15_hw/ch12_server" />
     <SUITE FILE_PATH="coverage/FinalProject_py$tkinter_full.coverage" NAME="tkinter full Coverage Results" MODIFIED="1733172258135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Year 2 Sophomore - Fall 2024-25/Comp Prob Solv in Python/L15 b" />
     <SUITE FILE_PATH="coverage/Final_Project$L23HW.coverage" NAME="L23HW Coverage Results" MODIFIED="1732417302485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FinalProject_py$FinalProject.coverage" NAME="FinalProject Coverage Results" MODIFIED="1733345223399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Final_Project$FinalProject.coverage" NAME="FinalProject Coverage Results" MODIFIED="1733345076684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Final_Project$FinalProject.coverage" NAME="FinalProject Coverage Results" MODIFIED="1733368488370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
