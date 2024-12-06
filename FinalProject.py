@@ -1,4 +1,6 @@
 # ????
+from scipy.io import wavfile
+import scipy.io
 import scipy.io as sc
 import matplotlib.pyplot as plt
 
@@ -25,6 +27,18 @@ from matplotlib.backend_bases import button_press_handler
 	#check for metadata
 		#if yes remove metadata
 		#if no keep going
+
+def processSoundData(filename):
+    extension = filename.split('.')
+    if extension != 'wav':
+        #if not wav convert to wav
+        i = 1
+        #convert to wav, delete that i = 1 part later, it's just to get it to stop yelling at me
+    else
+        #keep going
+        #check for channel number
+
+
 
 
 #Plotting graphs and analysing data
