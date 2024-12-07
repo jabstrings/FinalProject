@@ -23,18 +23,48 @@ from matplotlib.figure import Figure
 
 from matplotlib.backend_bases import button_press_handler
 #Receiving sound data
-def processSoundData(filename):
-    extension = filename.split('.')
-    if extension != 'wav':
-        #if not wav convert to wav
-        i = 1
-        #convert to wav, delete that i = 1 part later, it's just to get it to stop yelling at me
-    #else, keep going
+def processsounddata(filename):
+    #check file extension
+    splitExtension = filename.split('.')
+    if splitExtension[1] == 'mp3':
+        filename = convertfile(filename)
+
+    #everything is now a wav file
+
     #check for channel number
     samplerate, data = wavfile.read(filename)
     channelNumber = {data.shape[len(data.shape) - 1]}
     if channelNumber == 2:
-        x=1
+        #split audio
+        mono_audio = filename.split_to_mono()
+        file1 = mono_audio[0]
+        file2 = mono_audio[1]
+        file1.export("left_channel.wav", format="wav")
+        file2.export("right_channel.wav", format="wav")
+
+    #channels split, time to export
+    if channelNumber == 1:
+        return channelNumber, filename
+    elif channelNumber == 2:
+        return channelNumber, file1, file2
+
+
+
+#convert the file if necessary
+def convertfile(filename):
+    #filename & path of new file
+    split = filename.split('.')
+    newfilename = split[0] + '.wav'
+    #remove metadata first
+    subprocess.run(["ffmpeg", "-y", "-i", filename, "-map_metadata", "-1", filename], check=True)
+    subprocess.call(['ffmpeg', '-i', mp3, newfilename])
+    filename = AudioSegment.from_wav(newfilename)
+
+    #turn into wav
+
+
+    #return it back to the filename
+    return newfilename
 	#check for .wav
 		#if yes keep going
 		#if no convert to .wav

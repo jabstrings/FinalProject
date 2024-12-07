@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1047d6-544a-4911-b645-5690cdba6bbf" name="Changes" comment="All RT60 calculations">
+    <list default="true" id="6e1047d6-544a-4911-b645-5690cdba6bbf" name="Changes" comment="L23 program 12.3.24">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FinalProject.py" beforeDir="false" afterPath="$PROJECT_DIR$/FinalProject.py" afterDir="false" />
     </list>
@@ -23,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Michael-Plot-Branch" />
+        <entry key="$PROJECT_DIR$" value="testing" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,7 +34,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/jabstrings/FinalProject&quot;,
-    &quot;accountId&quot;: &quot;fe338180-a372-4713-aee8-6556f9ac0fd3&quot;
+    &quot;accountId&quot;: &quot;0bc0d892-d18e-4b45-822e-393ab01252f4&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -46,22 +46,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.FinalProject.executor": "Run",
-    "Python.L23HW.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/xande/OneDrive/Desktop/School Stuff/Sophomore Year/Sem 1/Computation Problem Solving in Python/Final Project",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.FinalProject.executor&quot;: &quot;Run&quot;,
+    &quot;Python.L23HW.executor&quot;: &quot;Run&quot;,
+    &quot;Python.scrape.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tkinter full.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cathe/PycharmProjects/pythonProject/FinalProject&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\xande\OneDrive\Desktop\School Stuff\Sophomore Year\Sem 1\Computation Problem Solving in Python\Final Project" />
@@ -88,8 +90,12 @@
       <workItem from="1732417941824" duration="166000" />
       <workItem from="1732418114735" duration="139000" />
       <workItem from="1732418260572" duration="99000" />
-      <workItem from="1733344430914" duration="690000" />
-      <workItem from="1733515759946" duration="3180000" />
+      <workItem from="1733000076981" duration="708000" />
+      <workItem from="1733001343789" duration="2919000" />
+      <workItem from="1733169562155" duration="3372000" />
+      <workItem from="1733186203524" duration="4064000" />
+      <workItem from="1733342488482" duration="2868000" />
+      <workItem from="1733490916637" duration="2968000" />
     </task>
     <task id="LOCAL-00001" summary="Framework of code I suppose">
       <option name="closed" value="true" />
@@ -131,39 +137,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732417509279</updated>
     </task>
-    <task id="LOCAL-00006" summary="Waveform Plot functions">
+    <task id="LOCAL-00006" summary="L23 program">
       <option name="closed" value="true" />
-      <created>1733172265479</created>
+      <created>1733240326305</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1733172265479</updated>
+      <updated>1733240326305</updated>
     </task>
-    <task id="LOCAL-00007" summary="Add GUI buttons">
+    <task id="LOCAL-00007" summary="L23 program 12.3.24">
       <option name="closed" value="true" />
-      <created>1733346458548</created>
+      <created>1733240407707</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1733346458548</updated>
+      <updated>1733240407707</updated>
     </task>
-    <task id="LOCAL-00008" summary="RT60 progress">
-      <option name="closed" value="true" />
-      <created>1733466431324</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1733466431324</updated>
-    </task>
-    <task id="LOCAL-00009" summary="All RT60 calculations">
-      <option name="closed" value="true" />
-      <created>1733515910875</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1733515910875</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,17 +186,15 @@
     <MESSAGE value="Framework of code I suppose" />
     <MESSAGE value="New Commit" />
     <MESSAGE value="L23 program" />
-    <MESSAGE value="Waveform Plot functions" />
-    <MESSAGE value="Add GUI buttons" />
-    <MESSAGE value="RT60 progress" />
-    <MESSAGE value="All RT60 calculations" />
-    <option name="LAST_COMMIT_MESSAGE" value="All RT60 calculations" />
+    <MESSAGE value="L23 program 12.3.24" />
+    <option name="LAST_COMMIT_MESSAGE" value="L23 program 12.3.24" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/FinalProject_py$scrape.coverage" NAME="scrape Coverage Results" MODIFIED="1733170186601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../L15_hw/ch12_server" />
+    <SUITE FILE_PATH="coverage/FinalProject_py$testing.coverage" NAME="testing Coverage Results" MODIFIED="1733522261025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FinalProject_py$tkinter_full.coverage" NAME="tkinter full Coverage Results" MODIFIED="1733172258135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Year 2 Sophomore - Fall 2024-25/Comp Prob Solv in Python/L15 b" />
+    <SUITE FILE_PATH="coverage/FinalProject_py$ee.coverage" NAME="ee Coverage Results" MODIFIED="1733521416221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FinalProject_py$scrape.coverage" NAME="scrape Coverage Results" MODIFIED="1733170186601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../L15_hw/ch12_server" />
+    <SUITE FILE_PATH="coverage/FinalProject_py$FinalProject.coverage" NAME="FinalProject Coverage Results" MODIFIED="1733518510168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Final_Project$L23HW.coverage" NAME="L23HW Coverage Results" MODIFIED="1732417302485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/FinalProject_py$FinalProject.coverage" NAME="FinalProject Coverage Results" MODIFIED="1733345223399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Final_Project$FinalProject.coverage" NAME="FinalProject Coverage Results" MODIFIED="1733520779678" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
