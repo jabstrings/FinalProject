@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1047d6-544a-4911-b645-5690cdba6bbf" name="Changes" comment="L23 program 12.3.24">
+    <list default="true" id="6e1047d6-544a-4911-b645-5690cdba6bbf" name="Changes" comment="completed processSoundData">
+      <change beforePath="$PROJECT_DIR$/.idea/Final Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Final Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FinalProject.py" beforeDir="false" afterPath="$PROJECT_DIR$/FinalProject.py" afterDir="false" />
     </list>
@@ -153,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733240407707</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="completed processSoundData">
+      <option name="closed" value="true" />
+      <created>1733604827630</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1733604827630</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,14 +197,15 @@
     <MESSAGE value="New Commit" />
     <MESSAGE value="L23 program" />
     <MESSAGE value="L23 program 12.3.24" />
-    <option name="LAST_COMMIT_MESSAGE" value="L23 program 12.3.24" />
+    <MESSAGE value="completed processSoundData" />
+    <option name="LAST_COMMIT_MESSAGE" value="completed processSoundData" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FinalProject_py$testing.coverage" NAME="testing Coverage Results" MODIFIED="1733522261025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FinalProject_py$tkinter_full.coverage" NAME="tkinter full Coverage Results" MODIFIED="1733172258135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Year 2 Sophomore - Fall 2024-25/Comp Prob Solv in Python/L15 b" />
     <SUITE FILE_PATH="coverage/FinalProject_py$ee.coverage" NAME="ee Coverage Results" MODIFIED="1733521416221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FinalProject_py$scrape.coverage" NAME="scrape Coverage Results" MODIFIED="1733170186601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../L15_hw/ch12_server" />
-    <SUITE FILE_PATH="coverage/FinalProject_py$FinalProject.coverage" NAME="FinalProject Coverage Results" MODIFIED="1733518510168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FinalProject_py$FinalProject.coverage" NAME="FinalProject Coverage Results" MODIFIED="1733605109233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Final_Project$L23HW.coverage" NAME="L23HW Coverage Results" MODIFIED="1732417302485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

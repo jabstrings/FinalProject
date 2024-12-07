@@ -1,7 +1,10 @@
+
 from typing import Any
 
 from matplotlib import pyplot as plt
+
 from numpy import ndarray, dtype, floating
+from pydub import AudioSegment
 from scipy.io import wavfile
 import scipy.io.wavfile as scw
 import scipy.io
@@ -20,6 +23,14 @@ from tkinter import ttk, filedialog as fd, messagebox
 from tkinter.messagebox import showinfo
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
+
+import scipy.io
+import scipy.io as sc
+from scipy.io import wavfile
+import matplotlib.pyplot as plt
+import subprocess
+from pydub import AudioSegment
+from mutagen import mp3
 
 from matplotlib.backend_bases import button_press_handler
 #Receiving sound data
