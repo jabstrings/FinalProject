@@ -1,0 +1,15 @@
+Required Package Installations:
+
+matplotlib
+scipy
+pydub
+wave
+tkinter
+argparse
+base64
+json
+pathlib
+bs4
+requests
+subprocess
+mutagen
