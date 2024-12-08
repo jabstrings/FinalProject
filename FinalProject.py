@@ -45,6 +45,7 @@ def processsounddata(filename):
     #check for channel number
     samplerate, data = wavfile.read(filename)
     channelNumber = {data.shape[len(data.shape) - 1]}
+
     if channelNumber == 2:
         #split audio
         mono_audio = filename.split_to_mono()
@@ -295,7 +296,7 @@ def plotData(filename, ax):
 	data = get_data(filename)
 	sample_rate = get_sample_rate(filename)
 	length = get_length(filename)
-
+	processsounddata(filename)
 	lowRT60(data, sample_rate, ax)
 	midRT60(data, sample_rate, ax)
 	highRT60(data, sample_rate, ax)
@@ -324,6 +325,8 @@ def select_file():
         title='Selected File',
         message=filename
     )
+
+    processsounddata(filename)
 
 root = tk.Tk()
 fig, ax = plt.subplots(figsize=(4, 3))
