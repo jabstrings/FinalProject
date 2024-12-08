@@ -1,6 +1,3 @@
-
-from typing import Any
-
 from matplotlib import pyplot as plt
 
 from numpy import ndarray, dtype, floating
@@ -59,23 +56,19 @@ def processsounddata(filename):
     elif channelNumber == 2:
         return channelNumber, file1, file2
 
-
 #convert the file if necessary
 def convertfile(filename):
     #filename & path of new file
     split = filename.split('.')
     newfilename = split[0] + '.wav'
+
     #remove metadata first
     subprocess.run(["ffmpeg", "-y", "-i", filename, "-map_metadata", "-1", filename], check=True)
     subprocess.call(['ffmpeg', '-i', mp3, newfilename])
     filename = AudioSegment.from_wav(newfilename)
 
-    #turn into wav
-
-
     #return it back to the filename
     return newfilename
-
 
 #Plotting graphs and analysing data
 #get length of the audio
@@ -125,7 +118,7 @@ def find_nearest_value(array, value):
     return array[idx]
 
 #low rt60 function
-def lowRT60(data, sample_rate, fig, ax):
+def lowRT60(data, sample_rate, ax):
 	# Define the time vector
 	t = np.linspace(0, len(data) / sample_rate, len(data), endpoint=False)
 
@@ -178,13 +171,8 @@ def lowRT60(data, sample_rate, fig, ax):
 	# Print RT60 value
 	print(f'The RT60 reverb time at freq {int(target_frequency)}Hz is {round(abs(lowrt60), 2)} seconds')
 
-	# canvas2
-	canvas2 = FigureCanvasTkAgg(fig, master=my_frame)
-	canvas2.draw()
-	canvas2.get_tk_widget().grid(row=1, column=1, padx=1, pady=1)
-
 #mid rt60 function
-def midRT60(data, sample_rate, fig, ax):
+def midRT60(data, sample_rate, ax):
 	# Define the time vector
 	t = np.linspace(0, len(data) / sample_rate, len(data), endpoint=False)
 
@@ -237,13 +225,8 @@ def midRT60(data, sample_rate, fig, ax):
 	# Print RT60 value
 	print(f'The RT60 reverb time at freq {int(target_frequency)}Hz is {round(abs(midrt60), 2)} seconds')
 
-	# canvas3
-	canvas3 = FigureCanvasTkAgg(fig, master=my_frame)
-	canvas3.draw()
-	canvas3.get_tk_widget().grid(row=1, column=2, padx=1, pady=1)
-
 #mid rt60 function
-def highRT60(data, sample_rate, fig, ax):
+def highRT60(data, sample_rate, ax):
 	# Define the time vector
 	t = np.linspace(0, len(data) / sample_rate, len(data), endpoint=False)
 
@@ -296,19 +279,14 @@ def highRT60(data, sample_rate, fig, ax):
 	# Print RT60 value
 	print(f'The RT60 reverb time at freq {int(target_frequency)}Hz is {round(abs(highrt60), 2)} seconds')
 
-	# canvas4
-	canvas4 = FigureCanvasTkAgg(fig, master=my_frame)
-	canvas4.draw()
-	canvas4.get_tk_widget().grid(row=2, column=0, padx=1, pady=1)
-
-def plotData(filename, fig, ax):
+#Analyze button command
+def plotData(filename, ax):
 	data = get_data(filename)
 	sample_rate = get_sample_rate(filename)
 	length = get_length(filename)
-
-	lowRT60(data, sample_rate, fig, ax)
-	midRT60(data, sample_rate, fig, ax)
-	highRT60(data, sample_rate, fig, ax)
+	lowRT60(data, sample_rate, ax)
+	midRT60(data, sample_rate, ax)
+	highRT60(data, sample_rate, ax)
 
 #specgram graph
 def specgram(data, sample_rate):
@@ -318,7 +296,7 @@ def specgram(data, sample_rate):
 	plt.ylabel('Frequency (Hz)')
 	cbar.set_label('Intensity (dB)')
 
-#Making Gui
+#Making GUI
 def select_file():
     filetypes = (
         ('audio files', '*.mp3'),
@@ -349,6 +327,21 @@ canvas1 = FigureCanvasTkAgg(fig, master=my_frame)
 canvas1.draw()
 canvas1.get_tk_widget().grid(row=1, column=0, padx=1, pady=1)
 
+# canvas2
+canvas2 = FigureCanvasTkAgg(fig, master=my_frame)
+canvas2.draw()
+canvas2.get_tk_widget().grid(row=1, column=1, padx=1, pady=1)
+
+# canvas3
+canvas3 = FigureCanvasTkAgg(fig, master=my_frame)
+canvas3.draw()
+canvas3.get_tk_widget().grid(row=1, column=2, padx=1, pady=1)
+
+# canvas4
+canvas4 = FigureCanvasTkAgg(fig, master=my_frame)
+canvas4.draw()
+canvas4.get_tk_widget().grid(row=2, column=0, padx=1, pady=1)
+
 #canvas5
 canvas5 = FigureCanvasTkAgg(fig, master=my_frame)
 canvas5.draw()
@@ -364,7 +357,7 @@ file_button = ttk.Button(my_frame, text="Open File", command=select_file)
 file_button.grid(row=0, column=0, padx=5, pady=5)
 
 # button for graphs
-analyze_button = ttk.Button(my_frame, text="Analyze", command=plotData("ClapIST.wav", fig, ax))
+analyze_button = ttk.Button(my_frame, text="Analyze", command=plotData("ClapIST.wav", ax))
 analyze_button.grid(row=0, column=1, padx=5, pady=5)
 
 root.mainloop()
