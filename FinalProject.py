@@ -186,7 +186,7 @@ def midRT60(data, sample_rate, ax):
 	spectrum = spectrum[:len(spectrum) // 2]
 
 	# Find the target frequency
-	target = 250
+	target = 1000
 	target_frequency = find_target_frequency(freqs, target)
 
 	# Apply a band-pass filter around the target frequency
@@ -240,7 +240,7 @@ def highRT60(data, sample_rate, ax):
 	spectrum = spectrum[:len(spectrum) // 2]
 
 	# Find the target frequency
-	target = 250
+	target = 5000
 	target_frequency = find_target_frequency(freqs, target)
 
 	# Apply a band-pass filter around the target frequency
