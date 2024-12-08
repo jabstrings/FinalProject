@@ -95,16 +95,14 @@ def get_sample_rate(filename):
 	return sample_rate
 
 #display waveform graph
-def display_wave_1channel(data, length, ax) :
+def display_wave_1channel(data, length, fig, ax) :
 	time = np.linspace(0., length, data.shape[0])
 	ax.plot(time, data, label="Single channel")
-	canvas1.draw()
 
-def display_wave_2channel(data, length, ax) :
+def display_wave_2channel(data, length, fig, ax) :
 	time = np.linspace(0., length, data.shape[0])
 	ax.plot(time, data[:, 0], label="Left channel")
 	ax.plot(time, data[:, 1], label="Right channel")
-	canvas1.draw()
 
 #compute RT60 for low medium and high frequency
 # Band-pass filter function
@@ -127,7 +125,7 @@ def find_nearest_value(array, value):
     return array[idx]
 
 #low rt60 function
-def lowRT60(data, sample_rate, ax):
+def lowRT60(data, sample_rate, fig, ax):
 	# Define the time vector
 	t = np.linspace(0, len(data) / sample_rate, len(data), endpoint=False)
 
@@ -179,10 +177,14 @@ def lowRT60(data, sample_rate, ax):
 
 	# Print RT60 value
 	print(f'The RT60 reverb time at freq {int(target_frequency)}Hz is {round(abs(lowrt60), 2)} seconds')
+
+	# canvas2
+	canvas2 = FigureCanvasTkAgg(fig, master=my_frame)
 	canvas2.draw()
+	canvas2.get_tk_widget().grid(row=1, column=1, padx=1, pady=1)
 
 #mid rt60 function
-def midRT60(data, sample_rate, ax):
+def midRT60(data, sample_rate, fig, ax):
 	# Define the time vector
 	t = np.linspace(0, len(data) / sample_rate, len(data), endpoint=False)
 
@@ -234,10 +236,14 @@ def midRT60(data, sample_rate, ax):
 
 	# Print RT60 value
 	print(f'The RT60 reverb time at freq {int(target_frequency)}Hz is {round(abs(midrt60), 2)} seconds')
+
+	# canvas3
+	canvas3 = FigureCanvasTkAgg(fig, master=my_frame)
 	canvas3.draw()
+	canvas3.get_tk_widget().grid(row=1, column=2, padx=1, pady=1)
 
 #mid rt60 function
-def highRT60(data, sample_rate, ax):
+def highRT60(data, sample_rate, fig, ax):
 	# Define the time vector
 	t = np.linspace(0, len(data) / sample_rate, len(data), endpoint=False)
 
@@ -289,16 +295,20 @@ def highRT60(data, sample_rate, ax):
 
 	# Print RT60 value
 	print(f'The RT60 reverb time at freq {int(target_frequency)}Hz is {round(abs(highrt60), 2)} seconds')
-	canvas4.draw()
 
-def plotData(filename, ax):
+	# canvas4
+	canvas4 = FigureCanvasTkAgg(fig, master=my_frame)
+	canvas4.draw()
+	canvas4.get_tk_widget().grid(row=2, column=0, padx=1, pady=1)
+
+def plotData(filename, fig, ax):
 	data = get_data(filename)
 	sample_rate = get_sample_rate(filename)
 	length = get_length(filename)
 
-	lowRT60(data, sample_rate, ax)
-	midRT60(data, sample_rate, ax)
-	highRT60(data, sample_rate, ax)
+	lowRT60(data, sample_rate, fig, ax)
+	midRT60(data, sample_rate, fig, ax)
+	highRT60(data, sample_rate, fig, ax)
 
 #specgram graph
 def specgram(data, sample_rate):
@@ -334,25 +344,10 @@ root.geometry("1500x600")
 my_frame = ttk.LabelFrame(root, text="File Options", padding="5 5 5 5")
 my_frame.grid(row=0, column=0, sticky="ew", padx=5, pady=5)
 
-#canvas1
+# canvas1
 canvas1 = FigureCanvasTkAgg(fig, master=my_frame)
 canvas1.draw()
 canvas1.get_tk_widget().grid(row=1, column=0, padx=1, pady=1)
-
-#canvas2
-canvas2 = FigureCanvasTkAgg(fig, master=my_frame)
-canvas2.draw()
-canvas2.get_tk_widget().grid(row=1, column=1, padx=1, pady=1)
-
-#canvas3
-canvas3 = FigureCanvasTkAgg(fig, master=my_frame)
-canvas3.draw()
-canvas3.get_tk_widget().grid(row=1, column=2, padx=1, pady=1)
-
-#canvas4
-canvas4 = FigureCanvasTkAgg(fig, master=my_frame)
-canvas4.draw()
-canvas4.get_tk_widget().grid(row=2, column=0, padx=1, pady=1)
 
 #canvas5
 canvas5 = FigureCanvasTkAgg(fig, master=my_frame)
@@ -369,7 +364,7 @@ file_button = ttk.Button(my_frame, text="Open File", command=select_file)
 file_button.grid(row=0, column=0, padx=5, pady=5)
 
 # button for graphs
-analyze_button = ttk.Button(my_frame, text="Analyze")
+analyze_button = ttk.Button(my_frame, text="Analyze", command=plotData("ClapIST.wav", fig, ax))
 analyze_button.grid(row=0, column=1, padx=5, pady=5)
 
 root.mainloop()
