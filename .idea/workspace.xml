@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1047d6-544a-4911-b645-5690cdba6bbf" name="Changes" comment="Edited clap into master">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalProject.py" beforeDir="false" afterPath="$PROJECT_DIR$/FinalProject.py" afterDir="false" />
-    </list>
+    <list default="true" id="6e1047d6-544a-4911-b645-5690cdba6bbf" name="Changes" comment="outputting graphs on GUI" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -180,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733618459662</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="outputting graphs on GUI">
+      <option name="closed" value="true" />
+      <created>1733622106674</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1733622106674</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,7 +224,8 @@
     <MESSAGE value="All RT60 calculations" />
     <MESSAGE value="Master commit RT60" />
     <MESSAGE value="Edited clap into master" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited clap into master" />
+    <MESSAGE value="outputting graphs on GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="outputting graphs on GUI" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FinalProject_py$testing.coverage" NAME="testing Coverage Results" MODIFIED="1733522261025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -228,6 +234,6 @@
     <SUITE FILE_PATH="coverage/FinalProject_py$ee.coverage" NAME="ee Coverage Results" MODIFIED="1733521416221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Final_Project$L23HW.coverage" NAME="L23HW Coverage Results" MODIFIED="1732417302485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FinalProject_py$FinalProject.coverage" NAME="FinalProject Coverage Results" MODIFIED="1733345223399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Final_Project$FinalProject.coverage" NAME="FinalProject Coverage Results" MODIFIED="1733621856918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Final_Project$FinalProject.coverage" NAME="FinalProject Coverage Results" MODIFIED="1733621876942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
