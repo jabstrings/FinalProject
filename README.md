@@ -2,7 +2,7 @@ This project is *supposed* to analyze a sound file selected by the user, meaning
   - calculated the RT60 values for low, medium, and high frequencies;
   - displayed a waveform graph of the file;
   - combined all 3 of the RT60 graphs into one; and
-  - show a specgram graph to represent the data of the sound file in some way,
+  - shown a specgram graph to represent the data of the sound file in some way,
 but all we could get it to do is shown below.
 
 When FinalProject.py is run, it opens a GUI with two buttons and 6 graphs of garbage data. These buttons are as follows:
